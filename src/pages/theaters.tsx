@@ -1,4 +1,4 @@
-import { Button, Table, Modal, TextInput, Textarea, Select, NumberInput } from '@mantine/core';
+import { Button, Table, Modal, TextInput, Select, NumberInput } from '@mantine/core';
 import { useForm } from '@mantine/form';
 import { useDisclosure } from '@mantine/hooks';
 import React, { FC } from 'react';
