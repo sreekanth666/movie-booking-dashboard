@@ -1,6 +1,8 @@
 import React, { FC } from 'react';
 import { AppShell, Burger, Group, Skeleton } from '@mantine/core';
 import { useDisclosure } from '@mantine/hooks';
+import { Route, Routes } from 'react-router-dom';
+import HomePage from './home';
 
 interface DashboardPageProps {
 
@@ -30,7 +32,11 @@ const DashboardPage: FC<DashboardPageProps> = ({ }) => {
                             <Skeleton key={index} h={28} mt="sm" animate={false} />
                         ))}
                 </AppShell.Navbar>
-                <AppShell.Main>Main</AppShell.Main>
+                <AppShell.Main>
+                    <Routes>
+                        <Route path="/" element={<HomePage />} />
+                    </Routes>
+                </AppShell.Main>
             </AppShell>
         </React.Fragment>
     );
