@@ -1,8 +1,9 @@
 import React, { FC } from 'react';
-import { AppShell, Burger, Group, Skeleton } from '@mantine/core';
+import { AppShell, Burger, Group } from '@mantine/core';
 import { useDisclosure } from '@mantine/hooks';
 import { Route, Routes } from 'react-router-dom';
 import HomePage from './home';
+import Sidebar from '../components/sidebar';
 
 interface DashboardPageProps {
 
@@ -10,6 +11,7 @@ interface DashboardPageProps {
 
 const DashboardPage: FC<DashboardPageProps> = ({ }) => {
     const [opened, { toggle }] = useDisclosure();
+
 
     return (
         <React.Fragment>
@@ -25,12 +27,7 @@ const DashboardPage: FC<DashboardPageProps> = ({ }) => {
                     </Group>
                 </AppShell.Header>
                 <AppShell.Navbar p="md">
-                    Navbar
-                    {Array(15)
-                        .fill(0)
-                        .map((_, index) => (
-                            <Skeleton key={index} h={28} mt="sm" animate={false} />
-                        ))}
+                    <Sidebar />
                 </AppShell.Navbar>
                 <AppShell.Main>
                     <Routes>
