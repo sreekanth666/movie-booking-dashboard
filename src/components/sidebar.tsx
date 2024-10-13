@@ -1,15 +1,18 @@
 import { ScrollArea } from '@mantine/core';
 import React, { FC } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 interface SidebarProps {
 
 }
 
 const Sidebar: FC<SidebarProps> = ({ }) => {
+    const navigate = useNavigate();
+
     return (
         <React.Fragment>
             <ScrollArea>
-                <div className='bg-gray-100 hover:bg-blue-100 flex items-center p-2 rounded-xl text-sm font-semibold gap-3 mb-2'>
+                <div className='bg-gray-100 hover:bg-blue-100 flex items-center p-2 rounded-xl text-sm font-semibold gap-3 mb-2' onClick={() => navigate('/app')}>
                     <div className='text-blue-500 bg-blue-100 p-2 rounded-lg'>
                         <svg xmlns="http://www.w3.org/2000/svg" width={20} height={20} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" className="icon icon-tabler icons-tabler-outline icon-tabler-home">
                             <path stroke="none" d="M0 0h24v24H0z" fill="none" />
@@ -21,7 +24,7 @@ const Sidebar: FC<SidebarProps> = ({ }) => {
                     Dashboard
                 </div>
 
-                <div className='bg-gray-100 hover:bg-blue-100 flex items-center p-2 rounded-xl text-sm font-semibold gap-3 mb-2'>
+                <div className='bg-gray-100 hover:bg-blue-100 flex items-center p-2 rounded-xl text-sm font-semibold gap-3 mb-2' onClick={() => navigate('/app/cities')}>
                     <div className='text-blue-500 bg-blue-100 p-2 rounded-lg'>
                         <svg xmlns="http://www.w3.org/2000/svg" width={20} height={20} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" className="icon icon-tabler icons-tabler-outline icon-tabler-buildings">
                             <path stroke="none" d="M0 0h24v24H0z" fill="none" />
@@ -41,7 +44,7 @@ const Sidebar: FC<SidebarProps> = ({ }) => {
                     Cities
                 </div>
 
-                <div className='bg-gray-100 hover:bg-blue-100 flex items-center p-2 rounded-xl text-sm font-semibold gap-3 mb-2'>
+                <div className='bg-gray-100 hover:bg-blue-100 flex items-center p-2 rounded-xl text-sm font-semibold gap-3 mb-2' onClick={() => navigate('/app/theaters')}>
                     <div className='text-blue-500 bg-blue-100 p-2 rounded-lg'>
                         <svg xmlns="http://www.w3.org/2000/svg" width={20} height={20} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" className="icon icon-tabler icons-tabler-outline icon-tabler-device-tv">
                             <path stroke="none" d="M0 0h24v24H0z" fill="none" />
@@ -52,7 +55,7 @@ const Sidebar: FC<SidebarProps> = ({ }) => {
                     Theaters
                 </div>
 
-                <div className='bg-gray-100 hover:bg-blue-100 flex items-center p-2 rounded-xl text-sm font-semibold gap-3 mb-2'>
+                <div className='bg-gray-100 hover:bg-blue-100 flex items-center p-2 rounded-xl text-sm font-semibold gap-3 mb-2' onClick={() => navigate('/app/movies')}>
                     <div className='text-blue-500 bg-blue-100 p-2 rounded-lg'>
                         <svg xmlns="http://www.w3.org/2000/svg" width={20} height={20} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" className="icon icon-tabler icons-tabler-outline icon-tabler-movie">
                             <path stroke="none" d="M0 0h24v24H0z" fill="none" />

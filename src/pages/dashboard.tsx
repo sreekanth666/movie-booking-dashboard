@@ -4,6 +4,9 @@ import { useDisclosure } from '@mantine/hooks';
 import { Route, Routes } from 'react-router-dom';
 import HomePage from './home';
 import Sidebar from '../components/sidebar';
+import CitiesPage from './cities';
+import TheatersPage from './theaters';
+import MoviesPage from './movies';
 
 interface DashboardPageProps {
 
@@ -31,6 +34,9 @@ const DashboardPage: FC<DashboardPageProps> = ({ }) => {
                 <AppShell.Main>
                     <Routes>
                         <Route path="/" element={<HomePage />} />
+                        <Route path="/cities" element={<CitiesPage />} />
+                        <Route path="/theaters" element={<TheatersPage />} />
+                        <Route path="/movies" element={<MoviesPage />} />
                     </Routes>
                 </AppShell.Main>
             </AppShell>
