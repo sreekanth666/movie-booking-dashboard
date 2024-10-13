@@ -21,7 +21,7 @@ const CitiesPage: FC<CitiesPageProps> = ({ }) => {
         }
     })
 
-    const cityTable = [
+    const table = [
         {
             name: 'Mumbai',
             theaters: [
@@ -88,7 +88,7 @@ const CitiesPage: FC<CitiesPageProps> = ({ }) => {
                     </Table.Thead>
                     <Table.Tbody>
                         {
-                            cityTable.map((movie, index) => (
+                            table.map((movie, index) => (
                                 <Table.Tr key={index}>
                                     <Table.Td>{index + 1}</Table.Td>
                                     <Table.Td>{movie.name}</Table.Td>
