@@ -2,6 +2,7 @@ import { upperFirst, useToggle } from '@mantine/hooks';
 import React, { FC } from 'react';
 import { useForm } from '@mantine/form';
 import { Paper, Group, Stack, TextInput, PasswordInput, Checkbox, Anchor, Button, Text, PaperProps } from '@mantine/core';
+import { useNavigate } from 'react-router-dom';
 
 interface LoginPageProps extends PaperProps {
 
@@ -9,6 +10,7 @@ interface LoginPageProps extends PaperProps {
 
 const LoginPage: FC<LoginPageProps> = ({ ...props }) => {
     const [type, toggle] = useToggle(['login', 'register']);
+    const navigate = useNavigate()
     const form = useForm({
         initialValues: {
             email: '',
@@ -23,6 +25,16 @@ const LoginPage: FC<LoginPageProps> = ({ ...props }) => {
         },
     });
 
+    const handleSubmit = async () => {
+        if (type === 'login') {
+            // login logic
+            navigate('/app')
+        } else {
+            // register logic
+            navigate('/app')
+        }
+    }
+
     return (
         <React.Fragment>
             <div className='flex h-dvh items-center justify-center'>
@@ -30,8 +42,8 @@ const LoginPage: FC<LoginPageProps> = ({ ...props }) => {
                     <Text size="lg" fw={500}>
                         Welcome to Movie Booking, Please {type}
                     </Text>
-    
-                    <form onSubmit={form.onSubmit(() => { })}>
+
+                    <form onSubmit={form.onSubmit(() => { handleSubmit() })}>
                         <Stack>
                             {type === 'register' && (
                                 <TextInput
@@ -42,7 +54,7 @@ const LoginPage: FC<LoginPageProps> = ({ ...props }) => {
                                     radius="md"
                                 />
                             )}
-    
+
                             <TextInput
                                 required
                                 label="Email"
@@ -52,7 +64,7 @@ const LoginPage: FC<LoginPageProps> = ({ ...props }) => {
                                 error={form.errors.email && 'Invalid email'}
                                 radius="md"
                             />
-    
+
                             <PasswordInput
                                 required
                                 label="Password"
@@ -62,7 +74,7 @@ const LoginPage: FC<LoginPageProps> = ({ ...props }) => {
                                 error={form.errors.password && 'Password should include at least 6 characters'}
                                 radius="md"
                             />
-    
+
                             {type === 'register' && (
                                 <Checkbox
                                     label="I accept terms and conditions"
@@ -71,7 +83,7 @@ const LoginPage: FC<LoginPageProps> = ({ ...props }) => {
                                 />
                             )}
                         </Stack>
-    
+
                         <Group justify="space-between" mt="xl">
                             <Anchor component="button" type="button" c="dimmed" onClick={() => toggle()} size="xs">
                                 {type === 'register'
