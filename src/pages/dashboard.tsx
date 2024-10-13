@@ -12,7 +12,6 @@ interface DashboardPageProps {
 const DashboardPage: FC<DashboardPageProps> = ({ }) => {
     const [opened, { toggle }] = useDisclosure();
 
-
     return (
         <React.Fragment>
             <AppShell
