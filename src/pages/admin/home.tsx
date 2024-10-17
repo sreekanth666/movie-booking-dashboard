@@ -1,5 +1,5 @@
 import React, { FC } from 'react';
-import CountCard from '../components/card-1';
+import CountCard from '../../components/card-1';
 import { Table } from '@mantine/core';
 
 interface HomePageProps {

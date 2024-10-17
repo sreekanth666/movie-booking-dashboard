@@ -3,7 +3,7 @@ import { AppShell, Burger, Group } from '@mantine/core';
 import { useDisclosure } from '@mantine/hooks';
 import { Route, Routes } from 'react-router-dom';
 import HomePage from './home';
-import Sidebar from '../components/sidebar';
+import Sidebar from '../../components/sidebar';
 import CitiesPage from './cities';
 import TheatersPage from './theaters';
 import MoviesPage from './movies';

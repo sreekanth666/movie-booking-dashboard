@@ -1,11 +1,11 @@
 import { Route, Routes } from 'react-router-dom'
-import DashboardPage from './pages/dashboard'
+import DashboardPage from './pages/admin/dashboard'
 import LoginPage from './pages/login'
 
 function App() {
   return (
     <Routes>
-      <Route path='/' element={<LoginPage />} />
+      <Route path='/login' element={<LoginPage />} />
       <Route path='app/*' element={<DashboardPage />} />
     </Routes>
   )
