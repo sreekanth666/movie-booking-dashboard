@@ -15,13 +15,13 @@ const TheatersPage: FC<TheatersPageProps> = ({ }) => {
             name: '',
             city: '',
             ticketPrice: 0,
-            beverage: true,
+            beverage: 'true',
         },
         validate: {
             name: (value) => value.length > 0 ? null : 'Name is required',
             city: (value) => value.length > 0 ? null : 'City is required',
             ticketPrice: (value) => value > 0 ? null : 'Ticket price is required',
-            beverage: (value) => ((value == true) || (value == false)) ? null : 'Beverage is required',
+            beverage: (value) => (value === 'true' || value === 'false') ? null : 'Beverage is required',
         }
     })
 

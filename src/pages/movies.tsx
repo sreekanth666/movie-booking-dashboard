@@ -13,17 +13,17 @@ const MoviesPage: FC<MoviesPageProps> = ({ }) => {
     const form = useForm({
         initialValues: {
             name: '',
-            totalTheaters: 0,
+            totalTheaters: [],
             languages: [],
             description: '',
-            subtitle: false
+            subtitle: 'false'
         },
         validate: {
             name: (value) => value.trim().length > 0 ? null : 'Name is required',
-            totalTheaters: (value) => value > 0 ? null : 'Total theaters is required',
+            totalTheaters: (value) => value.length > 0 ? null : 'Total theaters is required',
             languages: (value) => value.length > 0 ? null : 'Languages is required',
             description: (value) => value.trim().length > 0 ? null : 'Description is required',
-            subtitle: (value) => ((value == true) || (value == false)) ? null : 'Subtitle is required'
+            subtitle: (value) => (value === 'true' || value === 'false') ? null : 'Subtitle is required'
         }
     })
 
@@ -135,23 +135,23 @@ const MoviesPage: FC<MoviesPageProps> = ({ }) => {
                 </Table>
             </div>
 
-            <Modal opened={opened} onClose={close} title={<p className='text-lg font-semibold'>Edit city details</p>} size={'lg'}>
+            <Modal opened={opened} onClose={close} title={<p className='text-lg font-semibold'>Edit movie details</p>} size={'lg'}>
                 <form onSubmit={form.onSubmit(() => { handleSubmit() })}>
                     <div className='grid grid-cols-12 gap-5'>
                         <div className="col-span-12 md:col-span-6">
                             <TextInput label='Movie name' placeholder='Theater name' {...form.getInputProps('name')} />
                         </div>
                         <div className="col-span-12 md:col-span-6">
-                            <MultiSelect label='Select theaters' placeholder='City name' {...form.getInputProps('city')} />
+                            <MultiSelect label='Select theaters' placeholder='Select theaters' {...form.getInputProps('totalTheaters')} />
                         </div>
                         <div className="col-span-12 md:col-span-6">
-                            <MultiSelect label='Select Languages' placeholder='City name' {...form.getInputProps('city')} />
+                            <MultiSelect label='Select Languages' placeholder='Select languages' {...form.getInputProps('languages')} />
                         </div>
                         <div className="col-span-12 md:col-span-6">
-                            <Select label='Beverages available' placeholder='Beverages' data={subtitles} {...form.getInputProps('beverage')} />
+                            <Select label='Beverages available' placeholder='Select value' data={subtitles} {...form.getInputProps('subtitle')} />
                         </div>
                         <div className="col-span-12">
-                            <Textarea label='Description' placeholder='Ticket price' {...form.getInputProps('ticketPrice')} />
+                            <Textarea label='Description' placeholder='Description' {...form.getInputProps('description')} />
                         </div>
                     </div>
                     <div className="flex items-center justify-end mt-5">
