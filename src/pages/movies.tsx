@@ -148,7 +148,7 @@ const MoviesPage: FC<MoviesPageProps> = ({ }) => {
                             <MultiSelect label='Select Languages' placeholder='Select languages' {...form.getInputProps('languages')} />
                         </div>
                         <div className="col-span-12 md:col-span-6">
-                            <Select label='Beverages available' placeholder='Select value' data={subtitles} {...form.getInputProps('subtitle')} />
+                            <Select label='Subtitle available' placeholder='Select value' data={subtitles} {...form.getInputProps('subtitle')} />
                         </div>
                         <div className="col-span-12">
                             <Textarea label='Description' placeholder='Description' {...form.getInputProps('description')} />
