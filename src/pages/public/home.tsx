@@ -6,6 +6,7 @@ import PaymentPage from './payment';
 import ProfilePage from './profile';
 import SeatPage from './seat';
 import SlotPage from './slot';
+import Navbar from '../../components/navbar';
 
 interface HomePageProps {
 
@@ -14,16 +15,18 @@ interface HomePageProps {
 const HomePage: FC<HomePageProps> = ({ }) => {
     return (
         <React.Fragment>
-            <p>Navbar</p>
-
-            <Routes>
-                <Route path='/' element={<LandingPage />} />
-                <Route path='/details' element={<DetailsPage />} />
-                <Route path='/payment' element={<PaymentPage />} />
-                <Route path='/profile' element={<ProfilePage />} />
-                <Route path='/seat' element={<SeatPage />} />
-                <Route path='/slot' element={<SlotPage />} />
-            </Routes>
+            <div className='bg-gray-100 min-h-dvh'>
+                <Navbar />
+    
+                <Routes>
+                    <Route path='/' element={<LandingPage />} />
+                    <Route path='/details/:id' element={<DetailsPage />} />
+                    <Route path='/payment/:id' element={<PaymentPage />} />
+                    <Route path='/profile' element={<ProfilePage />} />
+                    <Route path='/seat/:date/:theater/:slot' element={<SeatPage />} />
+                    <Route path='/slot/:id' element={<SlotPage />} />
+                </Routes>
+            </div>
         </React.Fragment>
     );
 };
