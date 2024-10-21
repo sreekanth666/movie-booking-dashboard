@@ -17,7 +17,6 @@ const HomePage: FC<HomePageProps> = ({ }) => {
         <React.Fragment>
             <div className='bg-gray-100 min-h-dvh'>
                 <Navbar />
-    
                 <Routes>
                     <Route path='/' element={<LandingPage />} />
                     <Route path='/details/:id' element={<DetailsPage />} />
