@@ -30,7 +30,7 @@ const ProfilePage: FC<ProfilePageProps> = ({ }) => {
         }
     })
 
-    const handleSubmit = () => {
+    const handleSubmit = async () => {
         console.log(form.values);
     }
     return (
